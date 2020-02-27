@@ -20,6 +20,8 @@
     <!-- Your custom styles (optional) -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/chat.css">
+    <!-- tables sort -->
+    <link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet">
   </head>
   <body>
   
@@ -73,13 +75,13 @@
   
   <!-- table -->
   <div class="container">
-      <table class="table">
+      <table id="dtBasicExample" class="table table-sm">
           <thead>
-              <th scope="col">#</th>
-              <th scope="col">Category</th>
-              <th scope="col">Date</th>
-              <th scope="col">Status</th>
-              <th scope="col">Action</th>
+              <th scope="col" class="th-sm">#</th>
+              <th scope="col" class="th-sm">Category</th>
+              <th scope="col" class="th-sm">Date</th>
+              <th scope="col" class="th-sm">Status</th>
+              <th scope="col" class="th-sm">Action</th>
           </thead>
           <tbody>
               <tr>
@@ -233,8 +235,12 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.13.0/js/mdb.min.js"></script>
-
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
   <script>
+    $(document).ready(function () {
+$('#dtBasicExample').DataTable();
+$('.dataTables_length').addClass('bs-select');
+});
 function showChat(){
 		  $('.toast').toast('show');
 		}
