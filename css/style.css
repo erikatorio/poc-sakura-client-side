@@ -1,0 +1,150 @@
+#profpic {
+    height: 30px;
+    width: 30px;
+}
+
+#profpicx {
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
+}
+
+#logo {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+}
+
+.t-nav {
+    font-family: 'Lato';
+    color: #3D3028;
+}
+
+.t-content {
+    font-family: 'Roboto Condensed', sans-serif !important;
+    color: #3D3028;
+}
+
+.t-header {
+    font-family: 'Roboto Condensed', sans-serif !important;
+}
+
+.fas {
+    margin-right: 5px;
+}
+
+.card {
+    height: 230px;
+    width: 230px;
+    margin: 20px;
+    border-radius: 20px;
+}
+
+.card-title {
+    font-size: 15px !important;
+    color: #3D3028;
+    font-family: 'Lato';
+}
+
+.card-text {
+    font-size: 12px !important;
+}
+
+.card-body {
+    padding-top: 10px;
+    height: 130px;
+}
+
+.card-image {
+    height: 70px;
+    width: 70px;
+    margin: auto;
+    margin-top: 12px;
+}
+
+.gradient-card-header {
+    background-color: #FF9999;
+}
+
+.view {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.container {
+    margin-top: 30px;
+}
+
+.gradient-card-header {
+    height: 170px;
+}
+
+.category-text {
+    margin-top: 45px;
+    font-size: 70px;
+    font-family: 'Roboto Condensed', sans-serif !important;
+}
+
+.btn {
+    padding: 10px;
+    border-radius: 40px;
+}
+
+.edit {
+    height: 600px;
+}
+
+.edit-img {
+    height: 170px;
+    width: 170px;
+    padding: 20px;
+}
+
+.img-overlay {
+    position: absolute;
+    margin-top: 21px;
+    height: 130px;
+    width: 130px;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.5s ease;
+}
+
+.img-overlay img {
+    height: 40px;
+    width: 40px;
+    margin-top: 45px;
+    margin-left: 45px;
+    opacity: 0;
+    transition: opacity .35s ease;
+}
+
+.edit-image:hover .img-overlay {
+    display: block;
+    background: rgba(0, 0, 0, .3);
+}
+
+.edit-image:hover .img-overlay img {
+    opacity: 1;
+}
+
+#edit-profile {
+    width: 700px;
+}
+
+.save-profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.save-profile button {
+    width: 100px;
+}
+
+.username {
+    font-style: italic;
+}
+
+#submit_btn2 {
+    background-color: #FF9999;
+}

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>ITR</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="./img/flower.png" type="image/x-icon">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.13.0/css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/chat.css">
+</head>
+<body>
+
+  <!-- content start --> 
+  <!-- navbar -->
+  <nav class="mb-1 navbar sticky-top navbar-expand-lg grey lighten-5">
+    <img src="./img/flower.png" id="logo" alt="">
+    <a class="navbar-brand font-weight-bold t-nav" href="home.html">Sakura</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
+      aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        <li class="nav-item">
+          <a class="nav-link t-nav" onclick="showChat()" href="#"><i class="fas fa-comments"></i>Chat</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link t-nav" href="reports.html"><i class="fas fa-list"></i>Reports</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link t-nav dropdown-toggle" href="home.html" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false"><i class="fas fa-globe-asia"></i>Language
+          </a>
+          <div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
+            aria-labelledby="navbarDropdownMenuLink-55">
+            <a class="dropdown-item t-nav" href="#">English</a>
+            <a class="dropdown-item t-nav" href="#">Japanese</a>
+          </div>
+        </li>
+        <li class="nav-item avatar dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <img id="profpic" src="./img/user.png" class="rounded-circle z-depth-0"
+              alt="avatar image">
+          </a>
+          <div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
+            aria-labelledby="navbarDropdownMenuLink-55">
+            <div class="logo-wrapper sn-ad-avatar-wrapper">
+              <a href="#"><img id="profpicx" src="./img/user.png"
+                  class="rounded-circle"><span>rickybowen</span></a>
+            </div>
+            <a class="dropdown-item t-nav" href="editprofile.html"><i class="fas fa-edit"></i>Edit Profile</a>
+            <a class="dropdown-item t-nav" href="index.html"><i class="fas fa-sign-out-alt"></i>Logout</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- navbar end -->
+
+  <!-- categories -->
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="card">
+        <!-- Card image -->
+        <div class="view overlay gradient-card-header">
+          <img src="./img/fist.png" alt="" class="card-image">
+        </div>
+        <!-- Card content -->
+        <a href="#!" data-toggle="modal" data-target="#submit_modal">
+          <div class="mask rgba-white-slight"></div>
+          <div class="card-body">
+            <!-- Title -->
+            <p class="card-title">Physical Harassment</p>
+            <!-- Text -->
+            <p class="card-text">This type of harassment is done through violence either physically or to property. It can also come in form of threats.</p>
+          </div>
+        </a>
+      </div>
+      <div class="card">
+        <!-- Card image -->
+        <div class="view overlay gradient-card-header">
+          <img src="./img/sad.png" alt="" class="card-image">
+        </div>
+        <!-- Card content -->
+        <a href="#!" data-toggle="modal" data-target="#submit_modal">
+          <div class="mask rgba-white-slight"></div>
+          <div class="card-body">
+            <!-- Title -->
+            <p class="card-title">Personal Harassment</p>
+            <!-- Text -->
+            <p class="card-text">The victim may be subjected to unwanted remarks, insults, offensive and derogatory statements.</p>
+          </div>
+        </a>
+      </div>
+      <div class="card">
+        <!-- Card image -->
+        <div class="view overlay gradient-card-header">
+          <img src="./img/wheelchair.png" alt="" class="card-image">
+        </div>
+        <!-- Card content -->
+        <a href="#!" data-toggle="modal" data-target="#submit_modal">
+          <div class="mask rgba-white-slight"></div>
+          <div class="card-body">
+            <!-- Title -->
+            <p class="card-title">Discriminatory Harassment</p>
+            <!-- Text -->
+            <p class="card-text">This is directed at someone’s race, age, sex or some other form of protected class who is subjected to offensive or intimidating remarks.</p>
+          </div>
+        </a>
+      </div>
+      <div class="card">
+        <!-- Card image -->
+        <div class="view overlay gradient-card-header">
+          <img src="./img/down.png" alt="" class="card-image">
+          
+        </div>
+        <!-- Card content -->
+        <a href="#!" data-toggle="modal" data-target="#submit_modal">
+          <div class="mask rgba-white-slight"></div>
+          <div class="card-body">
+            <!-- Title -->
+            <p class="card-title">Psychological Harassment</p>
+            <!-- Text -->
+            <p class="card-text">A victim is often put down, belittled or has to listen to needless condescending remarks that can affect him or her.</p>
+          </div>
+        </a>
+      </div>
+      <div class="card">
+        <!-- Card image -->
+        <div class="view overlay gradient-card-header">
+          <img src="./img/error.png" alt="" class="card-image">
+        </div>
+        <!-- Card content -->
+        <a href="#!" data-toggle="modal" data-target="#submit_modal">
+          <div class="mask rgba-white-slight"></div>
+          <div class="card-body">
+            <!-- Title -->
+            <p class="card-title">Cyberbullying</p>
+            <!-- Text -->
+            <p class="card-text"> The person doing the harassing can make threatening statements to the victim or spread rumours on social media.</p>
+          </div>
+        </a>
+      </div>
+      <div class="card">
+        <!-- Card image -->
+        <div class="view overlay gradient-card-header">
+          <img src="./img/sexual-harassment.png" alt="" class="card-image">
+        </div>
+        <!-- Card content -->
+        <a href="#!" data-toggle="modal" data-target="#submit_modal">
+          <div class="mask rgba-white-slight"></div>
+          <div class="card-body">
+            <!-- Title -->
+            <p class="card-title">Sexual Harassment</p>
+            <!-- Text -->
+            <p class="card-text">A perpetrator behaves in a romantic or sexual way towards the victim who is clearly uncomfortable.</p>
+          </div>
+        </a>
+      </div>
+      <div class="card">
+        <!-- Card image -->
+        <div class="view overlay gradient-card-header">
+          <img src="./img/team.png" alt="" class="card-image">
+        </div>
+        <!-- Card content -->
+        <a href="#!" data-toggle="modal" data-target="#submit_modal">
+          <div class="mask rgba-white-slight"></div>
+          <div class="card-body">
+            <!-- Title -->
+            <p class="card-title">3rd Party Harassment</p>
+            <!-- Text -->
+            <p class="card-text">This type of harassment comes from someone who is not working as an employee in the company.</p>
+          </div>
+        </a>
+      </div>
+      <div class="card">
+        <!-- Card image -->
+        <div class="view overlay gradient-card-header">
+          <h1 class="card-header-title white-text text-center category-text"></h1>
+          
+        </div>
+        <!-- Card content -->
+        <a href="#!" data-toggle="modal" data-target="#submit_modal">
+          <div class="mask rgba-white-slight"></div>
+          <div class="card-body">
+            <!-- Title -->
+            <p class="card-title">Others</p>
+            <!-- Text -->
+            <p class="card-text"></p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- categories end -->
+  <!-- Modal -->
+  <form action="" method="post">
+    <div class="modal fade" id="submit_modal" role="dialog" aria-labelledby="submit_modal_title" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                Add additional information about your report.
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">			      	
+                    <div id="adtl_info">
+                        <form>
+                            <div class="form-group">
+                            <label for="exampleFormControlInput1">Who?</label>
+                            <input type="text" class="form-control" name="who" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">When did it happen?</label>
+                            <input type="text" class="form-control" name="when" placeholder="">
+                        </div>
+                            <div class="form-group">
+                            <label for="exampleFormControlInput1">Where did it happen?</label>
+                            <input type="text" class="form-control" name="where" placeholder="">
+                        </div>				  	
+                            <div class="form-group">
+                            <label for="exampleFormControlTextarea1">How did it happen?</label>
+                            <input type="text" class="form-control" name="how" placeholder="">
+                            </div>
+                          <div class="form-group">
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                              </div>
+                              <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="inputGroupFile01"
+                                  aria-describedby="inputGroupFileAddon01">
+                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                              </div>
+                            </div>
+                          </div>
+                    </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                <button id="submit_btn2" type="submit" class="btn" data-toggle="modal">Submit Report</button>
+                </div>
+        </div>
+        </div>
+</div>
+</form>
+<!-- Chat Container-->
+<div id="chat-container" >
+  <div id="chat-toast" class="toast" role="alert" data-autohide="false" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <i class="fas fa-comments"></i>
+      <strong id="chat-title" class="mr-auto t-content">&nbsp;Admin</strong>
+      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+    <div id="message-container" class="toast-body scrollbar scrollbar-rare-wind" style="background-color: #F5F5F5">
+      <div class="announcement">
+          <!-- <span>Previous messages have been deleted.</span> -->
+          <span>Start messaging.</span>
+      </div>
+      <br>
+      <!--admin message sample-->
+      <div class="d-flex justify-content-between">
+        <img id="chat_pic" src="./img/user.png"
+                  class="rounded-circle">
+        <span class="timestamp text-muted">01/21/2020 9:56AM</span>
+      </div>
+        <div class="row no-gutters">
+          <div class="col">
+            <div id="admin_message" class="message_display badge badge-light text-wrap d-inline-flex p-2 col-example">Tell me how you feel.</div>
+          </div>
+        </div>
+      <!--user message sample-->
+      <div class="d-flex justify-content-between">
+        <span class="timestamp text-muted">01/21/2020 9:56AM</span>
+        <img id="chat_pic" src="./img/ricky.JPG"
+                  class="rounded-circle">
+      </div>
+      <div class="row no-gutters">
+        <div class="col">
+          <div id="user_message" class="message_display badge badge-secondary text-wrap d-inline-flex p-2 col-example">I don't feel safe</div>
+        </div>
+      </div>
+      <!--user message sample-->
+      <div class="d-flex justify-content-between">
+        <span class="timestamp text-muted">01/21/2020 9:56AM</span>
+        <img id="chat_pic" src="./img/ricky.JPG"
+                  class="rounded-circle">
+      </div>
+      <div class="row no-gutters">
+        <div class="col">
+          <div id="user_message" class="message_display badge badge-secondary text-wrap d-inline-flex p-2 col-example">What must i do</div>
+        </div>
+      </div>
+    </div>
+         <div id="send-message" class="form-group row no-gutters">
+          <textarea class="form-control col-10 scrollbar textarea scrollbar-rare-wind" id="textarea-message" rows="1" cols="3" placeholder="Type a message" ></textarea>
+          <button type="button" id="chat-btn" onclick="sendMessage()" class="col-1 no-border-btn btn btn-info"></button>
+        </div>
+  </div>
+</div>
+
+  <!-- content end -->
+  
+  <!-- JQuery -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.13.0/js/mdb.min.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      var value;
+      $('.btn-cat').click(function() {
+        value = $(this).attr("value");
+        document.cookie = "category="+value;
+      });
+    });
+
+    function showChat(){
+		  $('.toast').toast('show');
+		}
+		 function autoScrollToBottom(){
+        $("#message-container").animate({ 
+          scrollTop: $('#message-container').get(0).scrollHeight 
+        }, 1000); 
+      }
+      
+      function sendMessage(){
+        var message =   $('textarea#textarea-message').val().trim();
+        if(message != ""){
+          $('#textarea-message').val('');
+          appendMessage(message);
+        }
+        autoScrollToBottom();
+        //add to database
+      }
+       function appendMessage(message){
+        //if user, check if received or sending
+        //if admin, check if receeived or sending and who is
+        //the user/chatbox owner
+        var sender = "./img/ricky.JPG";
+
+        //get current timestamp
+        var timestamp = "01/23/2020 10:56AM"
+        $('#message-container').append('<div class="d-flex justify-content-between"><span class="timestamp text-muted">'+timestamp+'</span><img id="chat_pic" src="'+sender+'" class="rounded-circle"></div><div class="row no-gutters"><div class="col"><div id="user_message" class="message_display badge badge-secondary text-wrap d-inline-flex p-2 col-example">'+message+'</div></div></div>');
+        
+      }
+  </script>
+
+</body>
+</html>
