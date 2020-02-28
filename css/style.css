@@ -172,3 +172,14 @@ label {
 .paginate_button {
     font-family: 'Lato' !important;
 }
+
+@media (max-width: 768px) {
+    .custom-file-label{
+        padding-left: 2px;
+    }
+    .label_text{
+        font-size: 2px;
+        
+    }
+
+}
