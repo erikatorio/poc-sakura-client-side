@@ -37,19 +37,19 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
         <ul class="navbar-nav ml-auto nav-flex-icons">
           <li class="nav-item">
-            <a class="nav-link t-nav" onclick="showChat()" href="#"><i class="fas fa-comments"></i>Chat</a>
+            <a class="nav-link t-nav" onclick="showChat()" href="#"><i class="fas fa-comments"></i>チャット</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link t-nav" href="reports.html"><i class="fas fa-list"></i>Reports</a>
+            <a class="nav-link t-nav" href="reports.html"><i class="fas fa-list"></i>レポート</a>
           </li>
           <li class="nav-item active">
             <a class="nav-link t-nav dropdown-toggle" href="home.html" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false"><i class="fas fa-globe-asia"></i>Language
+            aria-haspopup="true" aria-expanded="false"><i class="fas fa-globe-asia"></i>言語
             </a>
             <div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
               aria-labelledby="navbarDropdownMenuLink-55">
-              <a class="dropdown-item t-nav" href="#">English</a>
-              <a class="dropdown-item t-nav" href="#">Japanese</a>
+              <a class="dropdown-item t-nav" href="#">英語</a>
+              <a class="dropdown-item t-nav" href="#">日本語</a>
             </div>
           </li>
           <li class="nav-item avatar dropdown">
@@ -62,10 +62,10 @@
               aria-labelledby="navbarDropdownMenuLink-55">
               <div class="logo-wrapper sn-ad-avatar-wrapper">
                 <a href="#"><img id="profpicx" src="./img/user.png"
-                    class="rounded-circle"><span>rickybowen</span></a>
+                    class="rounded-circle"><span>rickybowen</span>さん</a>
               </div>
-              <a class="dropdown-item t-nav" href="editprofile.html"><i class="fas fa-edit"></i>Edit Profile</a>
-              <a class="dropdown-item t-nav" href="index.html"><i class="fas fa-sign-out-alt"></i>Logout</a>
+              <a class="dropdown-item t-nav" href="editprofile.html"><i class="fas fa-edit"></i>プロファイル編集</a>
+              <a class="dropdown-item t-nav" href="index.html"><i class="fas fa-sign-out-alt"></i>ログアウト</a>
             </div>
           </li>
         </ul>
@@ -78,9 +78,9 @@
       <table id="dtBasicExample" class="table table-sm">
           <thead>
               <th scope="col" class="th-sm">#</th>
-              <th scope="col" class="th-sm">Category</th>
-              <th scope="col" class="th-sm">Date</th>
-              <th scope="col" class="th-sm">Status</th>
+              <th scope="col" class="th-sm">カテゴリー</th>
+              <th scope="col" class="th-sm">日付</th>
+              <th scope="col" class="th-sm">ステータス</th>
               <th scope="col" class="th-sm">Action</th>
           </thead>
           <tbody>
@@ -129,37 +129,37 @@
       <form action="">
       <div class="modal-body">
           <div class="form-group">
-          <label for="exampleFormControlInput1">Who?</label>
+          <label for="exampleFormControlInput1">どちらが関与しましたか？</label>
           <input type="text" class="form-control" name="who" placeholder="">
       </div>
       <div class="form-group">
-          <label for="exampleFormControlInput1">When did it happen?</label>
+          <label for="exampleFormControlInput1">それはいつ起きましたか?</label>
           <input type="text" class="form-control" name="when" placeholder="">
       </div>
           <div class="form-group">
-          <label for="exampleFormControlInput1">Where did it happen?</label>
+          <label for="exampleFormControlInput1">それはどちらに起きましたか？</label>
           <input type="text" class="form-control" name="where" placeholder="">
       </div>				  	
           <div class="form-group">
-          <label for="exampleFormControlTextarea1">How did it happen?</label>
+          <label for="exampleFormControlTextarea1">それはどうやって起きましたか？</label>
           <input type="text" class="form-control" name="how" placeholder="">
           </div>
         <div class="form-group">
           <div class="input-group">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+              <span class="input-group-text" id="inputGroupFileAddon01">アップロードする</span>
             </div>
             <div class="custom-file">
               <input type="file" class="custom-file-input" id="inputGroupFile01"
                 aria-describedby="inputGroupFileAddon01">
-              <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+              <label class="custom-file-label" for="inputGroupFile01">ファイルを選択</label>
             </div>
           </div>
         </div>      
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-light" data-dismiss="modal">閉じる</button>
+        <button type="button" class="btn btn-primary">送信する</button>
       </div>
     </form>
     </div>
@@ -172,7 +172,7 @@
   <div id="chat-toast" class="toast" role="alert" data-autohide="false" aria-live="assertive" aria-atomic="true">
     <div class="toast-header">
       <i class="fas fa-comments"></i>
-      <strong id="chat-title" class="mr-auto t-content">&nbsp;Admin</strong>
+      <strong id="chat-title" class="mr-auto t-content">&nbsp;アドミン</strong>
       <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
