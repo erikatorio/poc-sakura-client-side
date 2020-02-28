@@ -4,13 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Company</title>
+  <title>Sakura</title>
   <!-- MDB icon -->
-  <link rel="icon" href="./img/night.png" type="image/x-icon">
+  <link rel="icon" href="./img/flower.png" type="image/x-icon">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <!-- Google Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
   <!-- Bootstrap core CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -23,44 +25,39 @@
 <body>
 
   <!-- content start -->
-    <div class="row">
-    <div class="col-5">
+    <div class="row justify-content-center">
         <!-- <div class="card shadow w-25 mx-auto"> -->
         <!-- <div class="card-body" id="login"> -->
             <!-- Default form login -->
-            <form class=" p-2" action="home.html">
+            <form class="p-2" action="home.html">
             <center>
-              <img src="./img/night.png" alt="">
-                <p class="h4 mb-4">Welcome!</p>
+              <img src="./img/flower.png" alt="">
+                <p class="h4 mb-4 white-text">Welcome!</p>
             </center>
                 
 
                 <!-- Email -->
                 <div class="md-form">
-                  <input type="text" id="materialFormCardEmailEx" class="form-control">
-                  <label for="materialFormCardEmailEx" class="font-weight-light">ユーザー名</label>
+                  <input type="text" id="materialFormCardEmailEx" class="form-item form-control">
+                  <label for="materialFormCardEmailEx" class="form-item font-weight-light">Username</label>
                 </div>
 
                 <!-- Password -->
                 <div class="md-form">
-                  <input type="password" id="materialFormCardPasswordEx" class="form-control">
-                  <label for="materialFormCardPasswordEx" class="font-weight-light">パスワード</label>
+                  <input type="password" id="materialFormCardPasswordEx" class="form-item form-control">
+                  <label for="materialFormCardPasswordEx" class="form-item font-weight-light">Password</label>
                 </div>
 
                 <center>
                   <!-- Sign in button -->
-                <button class="btn btn-secondary btn-block my-4" type="submit">サインイン</button>
+                <button id="login_btn" class="btn btn-block my-4" type="submit">Sign in</button>
                 </center>
 
             </form>
         <!-- </div> -->
         <!-- </div> -->
+        
     </div>
-    <div class="col-7">
-      <img src="./img/graphics.png" class="img-fluid" alt="Image">
-    </div>
-    </div>
-
 
   <!-- content end -->
   
@@ -76,6 +73,5 @@
   <script>
 
   </script>
-
 </body>
 </html>

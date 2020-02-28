@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ITR</title>
+    <link rel="icon" href="./img/flower.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/tables.css">
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- tables sort -->
+    <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+</head>
+<body>
+    <div class="container">
+        <table id="example" class="table">
+            <thead>
+              <tr>
+                <th scope="col" class="table-header th-sm">#</th>
+                <th scope="col" class="table-header th-sm">Category</th>
+                <th scope="col" class="table-header th-sm">Department</th>
+                <th scope="col" class="table-header th-sm">Date</th>
+                <th scope="col" class="table-header th-sm">Submitted By</th>
+                <th scope="col" class="table-header th-sm">Status</th>
+                <th class="table-header th-sm">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="report-row">
+                <th scope="row" class="table-id">1</th>
+                <td class="table-content">Physical Harassment</td>
+                <td class="table-content">Dev B</td>
+                <td class="table-content">February 22, 2019</td>
+                <td class="table-content">rickybowen</td>
+                <td class="table-content text-success">Completed</td>
+                <td><button class="btn btn-row" data-toggle="modal" data-target="#reportID1"><i class="fa fa-eye" aria-hidden="true"></i></button></td>
+              </tr>
+              <tr class="report-row">
+                <th scope="row" class="table-id">2</th>
+                <td class="table-content">Cyberbullying</td>
+                <td class="table-content">Dev A</td>
+                <td class="table-content">February 28, 2019</td>
+                <td class="table-content">ninisr</td>
+                <td class="table-content text-warning">Pending</td>
+                <td><button class="btn btn-row" data-toggle="modal" data-target="#reportID2"><i class="fa fa-eye" aria-hidden="true"></i></button></td>
+              </tr>
+              <tr class="report-row">
+                <th scope="row" class="table-id">3</th>
+                <td class="table-content">Discriminatory Harassment</td>
+                <td class="table-content">Dev B</td>
+                <td class="table-content">February 23, 2019</td>
+                <td class="table-content">supergirl</td>
+                <td class="table-content text-primary">Verified</td>
+                <td><button class="btn btn-row" data-toggle="modal" data-target="#reportID3"><i class="fa fa-eye" aria-hidden="true"></i></button></td>
+              </tr>
+            </tbody>
+          </table>
+
+    <!-- Modal -->
+    <div class="modal fade" id="reportID1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Physical Harassment</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h5>
+              Submitted by: 
+              <small class="text-muted">rickybowen</small>
+            </h5>
+            <h5>
+              Who: 
+              <small class="text-muted">John Smith</small>
+            </h5>
+            <h5>
+              When: 
+              <small class="text-muted">January 24, 2020</small>
+            </h5>
+            <h5>
+              Where: 
+              <small class="text-muted">Area 54</small>
+            </h5>
+            <h5>
+              How: 
+              <small class="text-muted">Punched in the face</small>
+            </h5>
+            <h5>
+              Evidence: 
+              <small class="text-muted">N/A</small>
+            </h5>
+            <h5>
+              Status: 
+              <small class="text-success">Verified</small>
+            </h5>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-main">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="reportID2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Cyberbullying</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h5>
+              Submitted by: 
+              <small class="text-muted">ninisr</small>
+            </h5>
+            <h5>
+              Who: 
+              <small class="text-muted">John Smith</small>
+            </h5>
+            <h5>
+              When: 
+              <small class="text-muted">February 3, 2020</small>
+            </h5>
+            <h5>
+              Where: 
+              <small class="text-muted">Area 54</small>
+            </h5>
+            <h5>
+              How: 
+              <small class="text-muted">Insults</small>
+            </h5>
+            <h5>
+              Evidence: 
+              <small class="text-muted">N/A</small>
+            </h5>
+            <h5>
+              Status: 
+              <small>
+                <div class="btn-group">
+                  <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Pending
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Verified</a>
+                    <a class="dropdown-item" href="#">Completed</a>
+                    <a class="dropdown-item" href="#">Rejected</a>
+                  </div>
+                </div>
+              </small>
+            </h5>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-main">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="reportID3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Discriminatory Harassment</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h5>
+              Submitted by: 
+              <small class="text-muted">supergirl</small>
+            </h5>
+            <h5>
+              Who: 
+              <small class="text-muted">John Smith</small>
+            </h5>
+            <h5>
+              When: 
+              <small class="text-muted">February 4, 2020</small>
+            </h5>
+            <h5>
+              Where: 
+              <small class="text-muted">Area 54</small>
+            </h5>
+            <h5>
+              How: 
+              <small class="text-muted">Insults</small>
+            </h5>
+            <h5>
+              Evidence: 
+              <small class="text-muted">N/A</small>
+            </h5>
+            <h5>
+              Status: 
+              <small>
+                <div class="btn-group">
+                  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Pending
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Pending</a>
+                    <a class="dropdown-item" href="#">Completed</a>
+                    <a class="dropdown-item" href="#">Rejected</a>
+                  </div>
+                </div>
+              </small>
+            </h5>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-main">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!-- scripts -->
+    <!-- bootstrap jquery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- datatables sorting -->
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+
+    <!-- script -->
+    <script>
+      $(document).ready(function() {
+          $('#example').DataTable();
+      });
+    </script>
+</body>
+</html>
