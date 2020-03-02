@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+  <script src="js/firestore.js"></script>
+  <script src="js/login.js"></script>
+  <link href="css/login.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+</head>
+
+<body style="overflow: hidden;">
+  <div id="backgroundimage"></div>
+  <div id="maincontent">
+    <!-- Logo and Title -->
+    <div class="d-flex justify-content-center row">
+      <div class="col-sm text-center py-4">
+        <div class="container py-4" id="title">
+          <h1 class="display-4">Report Application</h1>
+          <p class="lead">This application allows you to create reports of your choice!</p>
+        </div>
+      </div>
+    </div>
+    <!-- End of Logo and Title -->
+
+    <div class="d-flex justify-content-center row">
+      <!-- Empty div -->
+      <div class="col-md h-100"></div>
+      <!-- End of Empty div -->
+
+      <!-- Normal Login Div -->
+      <div id="logindiv1" class="card bg-light mb-3 pt-3 col-xs h-100 px-4 rounded" style="max-width: 18rem;">
+        <div class="card-body pt-4">
+          <h2 class="card-title">Login:</h2>
+          <form onsubmit="logIn(event);">
+            <!-- Username field -->
+            <div class="form-group mx-auto align-middle pt-4">
+              <input type="username" class="form-control" id="username" aria-describedby="username_extra"
+                placeholder="Username" required />
+            </div>
+            <!-- End of Username field -->
+
+            <!-- Password Field -->
+            <div class="form-group mx-auto align-middle">
+              <input type="password" class="form-control" id="password" aria-describedby="password_extra"
+                placeholder="Password" required />
+            </div>
+            <!-- End of Password field -->
+
+            <!-- Submit Button -->
+            <div class="mx-auto align-middle pl-4 pt-3 container">
+              <div class="row">
+                <div class="col-sm"></div>
+                <div class="col-sm text-center">
+                  <button type="submit" class="btn btn-primary " onclick="logIn(event)">
+                    Submit
+                  </button>
+                </div>
+                <div class="col-sm"></div>
+              </div>
+            </div>
+            <!-- End of Submit Button -->
+        </div>
+      </div>
+      <!-- End of Normal Login Div -->
+
+      <div class="col-md pt-4 h-100 pt-md-0">
+        <div class="row">
+          <div id="logindiv2" class="card h-100 shadow-lg col-md w-50 mx-auto px-4 pb-3 bg-light rounded"
+            style="max-width: 18rem;">
+            <form onsubmit="event.preventDefault();">
+              <!-- Create Anonymous Report -->
+              <div class="pt-4">
+                <label id="anonlabel" for="submit" class="h2 text-center pb-4 pt-4">Protect your privacy:</label>
+                <div class="row">
+                  <div class="col-sm text-center">
+                    <small class="form-text text-muted text-center pb-4">
+                      Creating an anonymous report will create a new report
+                      without getting information such as name or group from
+                      you.
+                    </small>
+                    <button id="displaybutton" type="button" class="btn btn-primary" onclick="displayLogin()">
+                      Create an Anonymous Report
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div id="anonlogin" class="row pt-1" style="display: none;">
+          <div id="logindiv3"
+            class="shadow-lg card bg-dark text-white bg-dark d-block col-md mx-auto w-50 border px-4  pt-4 pb-4 bg-light rounded">
+            <form onsubmit="event.preventDefault();">
+              <!-- Username field -->
+              <div class="">
+                <button type="button" class="btn btn-link" onclick="displayLogin()"><i
+                    class="fa fa-arrow-circle-left align-middle" style="font-size:35px;"></i></button>
+              </div>
+              <div class="form-group mx-auto align-middle">
+                <label for="username" class="h3">Login to Report Anonymously:</label>
+                <small class="form-text text-white text-center pb-4">
+                  Your user information will not be recorded upon submitting your report.
+                </small>
+                <input type="username" class="form-control" id="usernameanon" aria-describedby="username_extra"
+                  placeholder="Username" />
+              </div>
+
+              <!-- Password Field -->
+              <div class="form-group mx-auto align-middle ">
+                <input type="password" class="form-control text-black bg-light" id="passwordanon"
+                  aria-describedby="password_extra" placeholder="Password" />
+              </div>
+
+              <!-- Submit Button -->
+              <div class="mx-auto align-middle pl-4 pt-4 container">
+                <div class="row">
+                  <div class="col-sm"></div>
+                  <div class="col-sm text-center">
+                    <button type="submit" class="btn btn-primary " onclick="logIn(0);">
+                      Submit
+                    </button>
+                  </div>
+                  <div class="col-sm"></div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md h-100"></div>
+    </div>
+  </div>
+</body>
+
+</html>

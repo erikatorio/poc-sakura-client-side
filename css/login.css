@@ -1,16 +1,7 @@
-html:before {
-    content: "";
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    display: block;
-    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url('../img/bg.jpg');
+body {
     overflow: hidden;
-    background-size: cover;
+    background-size: 100%;
     background-repeat: no-repeat;
-    height: 100%;
-    overflow: hidden;
 }
 
 .row {
@@ -25,17 +16,17 @@ form img {
 }
 
 form {
-    width: 300px;
-    margin-top: 100px;
+    margin: 100px 50px 0px 50px;
 }
 
 form button {
     width: 150px !important;
 }
 
-.form-item {
-    font-family: 'Lato';
-    color: #FF9999;
+.col-7 img {
+    height: 75%;
+    width: 77%;
+    margin-left: 100px;
 }
 
 .md-form {

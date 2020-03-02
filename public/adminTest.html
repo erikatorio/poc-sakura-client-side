@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <script>
+    if (!sessionStorage.getItem("username"))
+      location.href = "/Login.html";
+    if (sessionStorage.getItem("userType") == 2)
+      location.href = "/403.html";
+  </script>
+
+  <title>Report Admin - Dashboard</title>
+
+  <!-- Custom styles for this template-->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
+
+  <link href="css/admin.css" rel="stylesheet">
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper h-100 w-100">
+
+    <!-- Main Content -->
+    <div id="content ">
+
+      <!-- Topbar -->
+      <nav class="navbar navbar-expand navbar-light bg-custom topbar mb-4 static-top shadow ">
+
+        <!-- Nav Heading -->
+        <div class="navbar-brand">
+          <h1 class="h3 mb-0 text-gray-800">iREPORT</h1>
+        </div>
+
+        <!-- Nav Item - User Information -->
+        <div class="ml-auto">
+          <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <h3 class="mr-2 d-none d-inline text-gray-600 ">Admin</h3>
+          </a>
+          <!-- Dropdown - User Information -->
+          <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+              <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+              Logout
+            </a>
+          </div>
+        </div>
+
+      </nav>
+      <!-- End of Topbar -->
+
+      <!-- Begin Page Content -->
+      <div id="container">
+        <!-- Stats Card -->
+        <div id="stats-container" class="row w-100 pb-4">
+          <div id="card1" class="stats-card">
+            <div class="card shadow h-100">
+              <!-- Card Header - Dropdown -->
+              <div class="card-header bg-custom py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-uppercase text-primary">Most Reported Category</h6>
+              </div>
+              <div class="card-body p-0">
+                <div class="col p-0 d-flex justify-content-center align-items-center h-100">
+                  <h3 id="categoryCount" class="text-danger"></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="card2" class="stats-card">
+            <div class="card shadow h-100">
+              <!-- Card Header - Dropdown -->
+              <div class="card-header bg-custom py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-uppercase text-primary">Group With Most Reports</h6>
+              </div>
+              <div class="card-body p-0">
+                <div class="col p-0 d-flex justify-content-center align-items-center h-100">
+                  <h3 id="groupCount" class="text-danger"></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="card3" class="stats-card">
+            <div class="card shadow h-100">
+              <!-- Card Header - Dropdown -->
+              <div class="card-header bg-custom py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-uppercase text-primary">Total Number of Reports</h6>
+              </div>
+              <div class="card-body p-0">
+                <div class="col p-0 d-flex justify-content-center align-items-center h-100">
+                  <h3 id="reportCount" class="text-danger"></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="card4" class="stats-card row mx-auto" style="width:20rem;">
+            <div class="card shadow h-100 ">
+              <!-- Card Header - Dropdown -->
+              <div class="card-header bg-custom d-flex flex-row align-items-center">
+                <h6 class="m-0 font-weight-bold text-uppercase text-primary m-auto">Latest Reports</h6>
+              </div>
+              <div class="card-body p-0">
+                <div class="col p-0 d-flex justify-content-center h-100">
+                  <div id="latestReport" class="text-danger"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="charts-container" class="row">
+          <div class="col-12 col-md-8 p-0 mb-4 mb-md-0">
+            <!-- Bar Chart -->
+            <div id="bar-container">
+              <div class="card shadow mb-0 h-100 mx-2 mx-md-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header bg-custom py-2 d-flex flex-row align-items-center justify-content-between">
+                  <h5 class="m-0 font-weight-bold text-primary text-uppercase">Reports</h5>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body h-100 w-80 py-0">
+
+                  <!-- Nav tabs -->
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link active" data-toggle="tab" href="#graph3d">3D Graph</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#bargraph">Bar Graph</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#tableTab">Table</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#addCategory">Add Category</a>
+                    </li>
+                  </ul>
+
+                  <!-- Tab panes -->
+                  <div class="tab-content">
+                    <div id="graph3d" class="container tab-pane active px-0">
+                      <div id="mygraph"></div>
+                    </div>
+                    <div id="bargraph" class="container tab-pane fade px-0">
+                      <div class="row">
+                        <div id="buttons" class="p-2 row">
+                          <input id="search" type="text" size="15" style="text-align: left;" placeholder="Search" value="1"
+                            onkeypress="searchField(this)">
+                          <input id="prev" class="material-icons" type="button" value="chevron_left"
+                            onclick="prevButton()" disabled="true">
+                          <input id="next" class="material-icons" type="button" value="chevron_right"
+                            onclick="nextButton()">
+                        </div>
+                      </div>
+                      <div>
+                        <canvas id="graph2d" class="w-100 h-100"></canvas>
+                      </div>
+                    </div>
+                    <div id="tableTab" class="container tab-pane fade px-0">
+                      <div id="allReports" class="pt-4">
+                        <div class="d-flex justify-content-center align-items-center w-90">
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Add Category Tab -->
+                    <div id="addCategory" class="container tab-pane fade px-0">
+                      <div id="addCategoryContainer" class="pt-4 px-2 w-100">
+                        <div class="row pl-4 w-100">
+                          <div class="col">
+                            <div class="row">
+                              <h3 class="">Add Category</h3>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row pl-4 w-100">
+                          <div class="row w-100">
+                            <form action="" onsubmit="event.preventDefault();" class="w-100">
+                              <div class="row pl-4 pb-2">
+                                <label for="catName" class="h6">Category Name:</label>
+                              </div>
+                              <div class="row pl-4 pb-4">
+                                <input type="text" id="catName" aria-describedby="catname_extra"
+                                  placeholder="Category Name" required />
+                              </div>
+                              <div class="row pl-4 w-100">
+                                <label for="catdesc" class="h6">Category Description:</label>
+                              </div>
+                              <div class="form-row row pl-3 h-100 w-75">
+                                <textarea class="w-100" id="catdesc"
+                                  placeholder="Input Description for the new Category to be added." required></textarea>
+                              </div>
+                              <div class="row pl-4 pt-4">
+                                <button type="submit" class="btn btn-primary" onclick="addCategory();">
+                                  Add Category
+                                </button>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4 p-0">
+            <!-- Pie Chart -->
+            <div id="pie-container" class="mx-2 mb-4">
+              <div class="card shadow mb-2 h-100">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex bg-custom flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary ">
+                    Reports (by:
+                    <div class="form-check form-check-inline mr-0">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="category" value="1"
+                        checked="checked">
+                      <label class="form-check-label" for="category">Category</label>
+                    </div>
+                    |
+                    <div class="form-check form-check-inline mr-0">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="group" value="2">
+                      <label class="form-check-label" for="group">Group</label>
+                    </div>
+                    )
+                  </h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body chart-container">
+                  <canvas id="myPieChart"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.container-fluid -->
+
+    </div>
+    <!-- End of Main Content -->
+
+  </div>
+  <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to top -->
+  <a class="scroll-to-top rounded bg-custom" href="#" style="display: none;">
+    <i class="material-icons">
+      arrow_upward
+    </i>
+  </a>
+  <!-- Modal -->
+  <div class="modal fade" id="reportDetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="reportTitle"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <ul class="list-unstyled">
+            <li id="sgroup">Group: </li>
+            <li id="scategory">Category: </li>
+            <li id="sdateInfo" data-toggle="tooltip" data-placement="top" title="Relative to the Report Date">Occurence:</li>
+            <li id="sotherDetails">Other Details: </li>
+            <li id="spersonInfo">Subject: </li>
+            <li id="sattachment"></li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal" >Cancel</button>
+          <button class="btn btn-primary"  onclick="logOut()" >Logout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/24fa3b289d.js" crossorigin="anonymous"></script>
+
+  <!-- VisJs core JavaScript-->
+  <script type="text/javascript" src="https://unpkg.com/vis-graph3d@latest/dist/vis-graph3d.min.js"></script>
+
+  <!-- Chart js -->
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
+  <!-- Firebase core Javascript-->
+  <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"> </script>
+  <script src="js/firestore.js"> </script>
+  <!-- PNotify Javascript-->
+  <script type="text/javascript" src="node_modules/pnotify/dist/iife/PNotify.js"></script>
+  <link href="node_modules/pnotify/dist/PNotifyBrightTheme.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="node_modules/pnotify/dist/iife/PNotifyButtons.js"></script>
+  <script type="text/javascript" src="node_modules/pnotify/dist/iife/PNotifyCallbacks.js"></script>
+  <script type="text/javascript" src="node_modules/pnotify/dist/iife/PNotifyMobile.js"></script>
+  <script type="text/javascript" src="node_modules/pnotify/dist/iife/PNotifyHistory.js"></script>
+  <script type="text/javascript" src="node_modules/pnotify/dist/iife/PNotifyDesktop.js"></script>
+  <script type="text/javascript" src="node_modules/pnotify/dist/iife/PNotifyConfirm.js"></script>
+  <script type="text/javascript" src="node_modules/pnotify/dist/iife/PNotifyReference.js"></script>
+  <script type="text/javascript">
+    window.centerModalStack = {
+      'dir1': 'down',
+      'firstpos1': 25,
+      'modal': true,
+      'overlayClose': true
+    };
+    PNotify.modules.History.defaults.maxInStack = 3;
+  </script>
+  <!-- Page Custom script-->
+  <script src="js/sb-admin-2.js"></script>
+  <script src="js/onLoad.js"></script>
+  <script src="js/reporting.js"></script>
+  <script src="js/graphGlobals.js"></script>
+  <script type="text/javascript" src="js/graph.js"></script>
+  <script type="text/javascript" src="js/graph2d.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+
+  <!-- Page Chart plugin -->
+  <script>
+    var ctx = document.getElementById('myPieChart').getContext('2d');
+    var ctx2d = document.getElementById('graph2d').getContext('2d');
+  </script>
+
+
+</body>
+
+</html>

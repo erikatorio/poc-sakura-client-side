@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <script>
+    if (!sessionStorage.getItem("username")) {
+      location.href = "/login.html";
+    }
+    if (!sessionStorage.getItem("category")) {
+      location.href = "/user.html";
+    }
+  </script>
+  <title>Report Details</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/details.css">
+</head>
+
+<body style="overflow: hidden;">
+  <!-- partial:index.partial.html -->
+
+  <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow ">
+
+    <!-- Nav Heading -->
+    <div class="navbar-brand">
+      <h1 class="h3 mb-0 text-gray-800">Report Details</h1>
+    </div>
+
+    <!-- Nav Item - User Information -->
+    <div class="ml-auto">
+      <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <h3 id="userName" class="mr-2 d-none d-inline text-gray-600 ">User</h3>
+      </a>
+      <!-- Dropdown - User Information -->
+      <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+          <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+          Logout
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!--PEN CONTENT     -->
+  <div class="content ">
+    <!--content inner-->
+    <div class="content__inner border py-4 bg-light rounded">
+      <div class="container overflow-hidden">
+        <!--multisteps-form-->
+        <div class="multisteps-form">
+          <div class="row">
+            <!-- Left side -->
+            <div class="col-12 col-sm-7 m-auto">
+              <!--progress bar-->
+              <div class="row">
+                <div class="col-12 col-lg-8 ml-auto mr-auto mb-4">
+                  <h2 class="content__title">Click on steps or 'Prev' and 'Next' buttons</h2>
+                  <h6 class="pt-2 text-center">Adding of details to the report is completely optional and you are
+                    allowed to fill in sections that you feel is needed.</h6>
+                  <div class="multisteps-form__progress">
+                    <button class="multisteps-form__progress-btn js-active" type="button" title="Date Info">Date
+                      Info</button>
+                    <button class="multisteps-form__progress-btn" type="button" title="Person Info">Person Info</button>
+                    <button class="multisteps-form__progress-btn" type="button" title="Other Detauls">Other
+                      Details</button>
+                    <button class="multisteps-form__progress-btn" type="button" title="Attach File">Attach File</button>
+                  </div>
+                </div>
+              </div>
+              <!--form panels-->
+              <form class="multisteps-form__form" onsubmit="storeData(event, false)">
+                <!--single form panel-->
+                <div class="multisteps-form__panel shadow p-4 rounded bg-white js-active" data-animation="fadeIn">
+                  <h3 class="multisteps-form__title">Date Information</h3>
+                  <p><small>When did the matter take place at the time of making this report?</small></p>
+                  <div class="multisteps-form__content">
+                    <input type="radio" name="date" value="Now"> Just Now<br>
+                    <input type="radio" name="date" value="Hour+"> An Hour or so ago<br>
+                    <input type="radio" name="date" value="Today"> Today<br>
+                    <input type="radio" name="date" value="Week"> This Week<br>
+                    <input type="radio" name="date" value="Month+"> This Month or older
+                    <!-- Navigation Button -->
+                    <div class="button-row d-flex mt-4">
+                      <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Next</button>
+                    </div>
+                    <!-- End of Navigation Button -->
+                  </div>
+                </div>
+                <!--single form panel-->
+                <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="fadeIn">
+                  <h3 class="multisteps-form__title">Person Information</h3>
+                  <p><small>Who was involved in the matter that is being reported?</small></p>
+                  <div class="multisteps-form__content">
+                    <input type="radio" name="person" value="Self"> Myself<br>
+                    <input type="radio" name="person" value="Other"> It happened to someone I know<br>
+                    <input type="radio" name="person" value="OtherAcq"> It happened to an acquaintance of someone I know
+                    <!-- Navigation Buttons -->
+                    <div class="button-row d-flex mt-4">
+                      <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Prev</button>
+                      <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Next</button>
+                    </div>
+                    <!-- End of Navigation Buttons -->
+                  </div>
+                </div>
+                <!--single form panel-->
+                <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="fadeIn">
+                  <h3 class="multisteps-form__title">Other Details</h3>
+                  <p><small>Input additional details regarding the matter being reported.</small></p>
+                  <div class="multisteps-form__content">
+                    <div class="form-row mt-4">
+                      <textarea class="multisteps-form__textarea form-control"
+                        placeholder="Additional Details regarding the Report"></textarea>
+                    </div>
+                    <div class="row">
+                      <!-- Navigation Buttons -->
+                      <div class="button-row d-flex mt-4 col-12">
+                        <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Prev</button>
+                        <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Next</button>
+                      </div>
+                      <!-- End of Navigation Buttons -->
+                    </div>
+                  </div>
+                </div>
+                <!--single form panel-->
+                <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="fadeIn">
+                  <h3 class="multisteps-form__title">Attach a File</h3>
+                  <p><small>Attach a file that could help support the report being made.</small></p>
+                  <div class="multisteps-form__content">
+                    <div class="form-row mt-4">
+                      <input id="fileInput" type="file" name="attachement" accept="audio/*,video/*,image/*" />
+                    </div>
+                    <p id="progress"></p>
+                    <!-- Navigation Buttons -->
+                    <div class="button-row d-flex mt-4">
+                      <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Prev</button>
+                      <button class="btn btn-success ml-auto" type="submit" title="Send">Send</button>
+                    </div>
+                    <!-- End of Navigation Buttons -->
+                  </div>
+                </div>
+              </form>
+            </div>
+            <!-- End of Left Side -->
+
+            <!-- Right Side -->
+            <div class="col-sm-5">
+              <form onsubmit="storeData(event, true)">
+                <!-- Create Anonymous Report -->
+                <div class="pt-4 rounded bg-white shadow">
+                  <div class="col-sm text-center pt-4">
+                    <small class="text-muted">-------OR-------</small>
+                    <label id="anonlabel" for="submit" class=" d-block h2 text-center pb-4 pt-4">Skip Report
+                      Details</label>
+                    <div id="Rightdiv" class="row py-4">
+                      <div class="col-sm text-center">
+                        <h6 class="py-4 text-center">Submit the report without any additional details.</h6>
+                        <button id="quickreport" type="submit" class="btn btn-primary py-4 px-4">Report</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <!-- End of Right Side -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Submit Report Modal -->
+  <div class="modal" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Report Successful!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+            onclick='location.href =  "/user.html";'>
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Your report has been successfully submitted!
+        </div>
+        <div class="modal-footer">
+          <button id="closemodal" type="button" class="btn btn-secondary" data-dismiss="modal"
+            onclick='location.href =  "/user.html";'>Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End of Submit Report Modal -->
+
+  <!-- Logout Modal -->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="login.html" onclick="logOut()">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End of Logout Modal -->
+
+</body>
+<!-- partial -->
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"> </script>
+<script src="js/file.js"> </script>
+<script src="js/firestore.js"> </script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'></script>
+<script src="js/details.js"></script>
+<script>
+  window.addEventListener("load", () => {
+    $('#successModal').modal('hide');
+  });
+</script>
+
+</html>

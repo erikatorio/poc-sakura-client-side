@@ -1,0 +1,19 @@
+body {
+    background: #e6f0ff;
+}
+
+#categorydiv {
+    background: white;
+    box-shadow: 10px 10px 5px grey;
+    min-width: 275px;
+}
+
+#maincontainer {
+    background: white;
+    box-shadow: 10px 10px 5px grey;
+    min-width: 275px;
+}
+
+#picture{
+    height: 175px;
+}
